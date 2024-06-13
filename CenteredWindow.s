@@ -44,19 +44,19 @@ main:  				// Main function entry point
 	mov x2, #0  		// Set x2 to 0 (horizontal position for box)
 	bl box  		// Draw a box around the edges of the window
 
-	ldr x0, [sp]  // Load the window pointer from the stack
-	add sp, sp, #16  // Deallocate space from the stack
+	ldr x0, [sp]  		// Load the window pointer from the stack
+	add sp, sp, #16  	// Deallocate space from the stack
 		
-	bl wrefresh  // Refresh the window to show the box
+	bl wrefresh  		// Refresh the window to show the box
 
-	bl getch  // Wait for a key press
-	bl endwin  // End the ncurses session and restore the terminal
+	bl getch  		// Wait for a key press
+	bl endwin  		// End the ncurses session and restore the terminal
 
-	mov x8, 93  // Set x8 to 93 (syscall number for exit)
-	mov x0, 0  // Set x0 to 0 (exit status)
-	svc 0  // Make a syscall to exit
+	mov x8, 93  		// Set x8 to 93 (syscall number for exit)
+	mov x0, 0  		// Set x0 to 0 (exit status)
+	svc 0  			// Make a syscall to exit
 
-.section .data  // Start of the data section
-termsize: .skip 4  // Reserve 4 bytes for the terminal size
-termtitle: .asciz "\033]0;ARMv8 - Ncurses Window (Centered)\007"  // Terminal title string
-win:  .quad 0  // Reserve 8 bytes for the window pointer
+.section .data  		// Start of the data section
+termsize: .skip 4  		// Reserve 4 bytes for the terminal size
+termtitle: .asciz "\033]0;ARMv8 - Ncurses Window (Centered)\007"  	// Terminal title string
+win:  .quad 0  			// Reserve 8 bytes for the window pointer
