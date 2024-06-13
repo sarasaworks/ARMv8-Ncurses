@@ -1,1 +1,1 @@
-The purpose of this repository is to share working examples of ARMv8 Assembly with the help of the NCURSES library. The goal is to write programs execute properly either via functions imported from NCURSES or kernal level syscalls.
+The purpose of this repository is to share working examples of ARMv8 Assembly with the help of the NCURSES library. The goal is to write programs execute properly either via functions imported from NCURSES or kernel level syscalls.
